@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>  
+    <head >
+        <link rel="stylesheet" type="text/css" href={{url_for('static', filename="css/results.css")}} />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href={{url_for('static', filename="images/favicon.ico")}}>
+
+	    <title>Results for: {{ query }}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        
+    </head>
+
+    <body>
+        <div class="holder">
+
+        <div class="img__wrap">
+            <img class="img__img" src={{url_for('static', filename="images/swan_home.png")}} alt="">
+            <a href="/"><div class="img__description_layer">
+              <p class="img__description">Return Home</p>
+            </div></a>
+        </div>
+
+                
+        <form action="/settings" method="GET">
+            <button type="submit" class="settings-button">
+                <span>Settings</span>
+            </button>
+            
+        </form>
+
+        <div class="container">
+            <form action="/search_results" method="GET" class="search-bar">
+                <input type="text" name="query" placeholder={{ query }} required minlength="1">
+
+                <button type="submit"><img src={{url_for('static', filename="images/search.png")}}></button>
+            </form>
+
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+
+        <div class="results">
+
+        {% if results %}
+
+            {% set myResults = results %}
+            {% set myTitles = resultsTitles %}
+            {% set myMinorText = resultsMinorText %}
+
+            {% for i in range(myResults| length) %}
+                <p style="text-decoration:none;font-size:28px;"><a href="{{ myResults[i] }}">{{resultsTitles[i]}}</a></p>
+                <p style="font-size:20px;color:#45fd88">{{ resultsAuthors[i] }}</p>
+                <p style="font-size:18px;">{{resultsMinorText[i]}}</p><br><br>
+                
+            {% endfor %}
+
+        {% else %}
+            <p>No Results Found</p>
+        {% endif %}
+        </div>
+
+        <p style="margin-left:auto;margin-right:auto;display:block;width:15%;">You are seeing results {{pageNum + 1}} - {{pageNum + 10}}</p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <footer class="footer">
+            {% if pageNum >= 10 %}
+            <div class="new-results-left">
+
+                <form action="/last_page" method="GET">
+                        <button class="left-arrow" type="submit"><img style="height: 100px; width: 100px;" src={{url_for('static', filename="images/left-arrow.svg")}}></button>
+                </form>
+            </div>
+            {% else %}
+                <button class="offset"></button>
+            {% endif %}
+    
+            <div class="copyright">
+                <p style="color: #cac7ff;">&copy; Owen Chicklis</p>
+            </div>
+    
+    
+            <div class="new-results-right">
+    
+                <form action="/next_page" method="GET">
+                    <button class="right-arrow" type="submit"><img style="height: 100px; width: 100px;" src={{url_for('static', filename="images/right-arrow.svg")}}></button>
+                </form>
+            </div>
+
+        </footer>
+
+
+    </div>
+    </body>
+
+
+
+</html>

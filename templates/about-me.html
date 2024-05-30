@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>  
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename="css/about-me.css")}} />
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <head >
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href={{url_for('static', filename="images/favicon.ico")}}>
+
+
+	    <title>About-Me</title>
+        
+    </head>
+
+    <body>
+        <div class="img__wrap">
+            <img class="img__img" src={{url_for('static', filename="images/swan_home.png")}} alt="">
+            <a href="/"><div class="img__description_layer">
+              <p class="img__description">Return Home</p>
+            </div></a>
+        </div>
+
+        <div class="text-wrapper">
+
+            <h3 class="about-project-title">About This Project</h3> <br>
+            <p class="about-project">
+                This research search engine was created as a school junior project. <br><br>
+            </p>
+            <h3 class="about-scope-title">Scope of This Project</h3>
+            <p class="about-scope">
+                The scope of this project was to create a search engine primarily for research purposes. This search engine will have 
+                a searching function based on Google Scholarly's website database. It will return the same results as Google Scholarly,
+                but it will be displayed in a more comfortable manner.
+            </p>
+            <h3 class="about-limitations-title">Contraints/Limitations</h3>
+            <p class="about-limitations">
+                There were major limitations while I was creating this search engine. The first one is about captcha. Google Scholarly 
+                implements a captcha service in their engine, so when a user uses mine, they will have to go through the same captcha. 
+                However, with the way I implemented the engine, I couldn't display the captcha for the user to solve, so I had to code 
+                a way to automatically solve them. I ended up using a paid service to solve the captchas automatically, so users can 
+                search without needing to solve them. <br> <br>
+
+                Another limitation is time. I started working on the project around the start of March, and the project is due in May, so 
+                I have around two months in total to work on it. During this time, a lot of the focus was spent on troubleshooting and testing 
+                the searching aspect, and I had no time to work on everything that I wanted to. The VPN and proxy service that I initally 
+                wanted to implement could not be implemented in the sake of time. The settings feature is also very limited, as I did not 
+                have the time to make a larger settings menu. <br><br>
+
+                Finally, I could not end up making the search feature toggleable. I initally wanted to allow the user to use this engine as 
+                both a normal search engine and as a research search engine, and while I have some ideas on how to implement this feature, 
+                I do not have the time to implement it. As a result, I only made this search engine for research purposes, as that is the 
+                primary purpose of the engine.
+            </p>
+
+        </div>
+
+
+
+    </body>
+
+</html>

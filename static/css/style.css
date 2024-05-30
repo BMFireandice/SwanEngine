@@ -1,0 +1,222 @@
+@import url(global.css);
+a{
+    text-decoration: none;
+}
+
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    background: rbga(255,255,255,0.2);
+    border-radius: 60px;
+    padding: 10px 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+    display: flex;
+    align-items: center;
+}
+.search-bar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #cac7ff;
+    font-family: "Open Sans", Verdana;
+
+}
+.search-bar button {
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: #58629b;
+    cursor: pointer;
+    transition: transform .7s ease-in-out;
+}
+.search-bar button img {
+    width: 25px;
+}
+.search-bar button:hover {
+    transform: rotate(360deg)
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-image: var(--background-image-color), var(--background-image); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.swan {
+    border-radius: 40%;
+    max-height: auto;
+    width: 20%;
+    display:block;
+    margin-right: auto;
+    margin-left: 40%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.settings-button {
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: #000000ab;
+    border-radius: 5px;
+
+    width: 300px;
+    height: 100px;
+    float: right;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-right: 15px;
+
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    font-family: "Open Sans", Verdana;
+    letter-spacing: 0.5px;
+    
+    transition: all 0.5s;
+    background: transparent;
+    backdrop-filter: blur(4px) saturate(180%);
+
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+    
+
+}
+.settings-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.settings-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.settings-button:hover span {
+    padding-right: 25px;
+}
+.settings-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.creator {
+    float: left;
+    padding-left: 300px;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: "Open Sans", Verdana;
+    letter-spacing: 0.5px;
+    display: block;
+    padding-top: 40px;
+}
+
+.about-page {
+    float: right;
+    padding-right: 300px;
+    padding-top: 40px;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: "Open Sans", Verdana;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.bottom{
+	position: fixed;
+	bottom: 0px;
+    left: 0px;
+	width: 100%;
+    height: 12%;
+	z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(50px) saturate(150%);
+
+
+}
+
+
+
+
+
+/*
+.gear-parent {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: auto;
+    cursor: pointer;
+    padding: 100px;
+}
+
+.gear {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background: #fff;
+    border-radius: 50%;
+
+}
+
+.gear-button:hover {
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.gear .center {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    background: rgba(0,8,51,0.9);
+    border-radius: 50%;
+}
+
+.tooth {
+    position: absolute;
+    top: -12.5px;
+    left: 37.5px;
+    z-index: 1;
+    width: 22.5px;
+    height: 125px;
+    background: #fff;
+}
+
+.tooth:nth-child(2) {
+    transform: rotate(45deg);
+}
+.tooth:nth-child(3) {
+    transform: rotate(90deg);
+}
+.tooth:nth-child(4) {
+    transform: rotate(135deg);
+}
+@keyframes spin {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg); }
+}*/
