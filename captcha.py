@@ -1,3 +1,5 @@
+# NOTE: This is currently in progress, this code to skip though captchas is not currently active in the project
+
 import json
 import time
 from selenium import webdriver
