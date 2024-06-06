@@ -4,14 +4,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> <!-- import fonts from google's api -->
 
     <head >
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href={{url_for('static', filename="images/favicon.ico")}}>\
 
-	    <title>Swan</title>
+	    <title>Swan</title> <!-- title of the page -->
         
     </head>
 
@@ -20,41 +20,26 @@
         <form action="/settings" method="GET">
             <button type="submit" class="settings-button">
                 <span>Settings</span>
-                <!--<div class="gear-parent">
-                    <div class="gear">
-                        <div class="center"></div>
-                        <div class="tooth"></div>
-                        <div class="tooth"></div>
-                        <div class="tooth"></div>
-                        <div class="tooth"></div>
-                    </div>
-                </div>-->
-            </button>
+            </button> <!-- when clicked, sends the user to the settings menu -->
             
         </form>
 
 
         <img class="swan" src={{url_for('static', filename="images/swan.png")}} alt="">
 
-        <!--<div class="settings-container">
-            <form action="" method="GET" class="settings-button">
-                <button type="submit"><img src={{ url_for('static', filename='images/gear3.png') }}></button>
-            </form>
-        </div>-->
-
         <div class="container">
             <form action="/search_results" method="GET" class="search-bar">
                 <input type="text" name="query" placeholder="Enter your search query" required minlength="1">
 
                 <button type="submit"><img src={{url_for('static', filename='images/search.png')}}></button>
-            </form>
+            </form> <!-- this is the search bar, where users enter their search query and press the search button or press enter and the code moves to the server -->
 
         </div>
 
 
         <div class="bottom">
-            <a class="creator" href="https://www.patreon.com/OwenChicklis" target="_blank">Support the Creator!</a>
-            <a class="about-page" href="/about-me" method="GET" >About This Website</a>
+            <a class="creator" href="https://www.patreon.com/OwenChicklis" target="_blank">Support the Creator!</a> <!-- when clicked, sends the user to a patreon page -->
+            <a class="about-page" href="/about-me" method="GET" >About This Website</a> <!-- when clicked, sends the user to the page describing the project -->
         </div>
 
         
