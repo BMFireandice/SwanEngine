@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href={{url_for('static', filename="images/favicon.ico")}}>
 
-	    <title>Results for: {{ query }}</title>
+	    <title>Results for: {{ query }}</title> <!-- title of the page -->
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> <!-- imports fonts from a google api -->
         
     </head>
 
@@ -20,14 +20,15 @@
             <img class="img__img" src={{url_for('static', filename="images/swan_home.png")}} alt="">
             <a href="/"><div class="img__description_layer">
               <p class="img__description">Return Home</p>
-            </div></a>
+            </div></a> <!-- when clicked, sends the user to the home menu -->
         </div>
 
                 
         <form action="/settings" method="GET">
             <button type="submit" class="settings-button">
                 <span>Settings</span>
-            </button>
+            </button> <!-- when clicked, sends the user to the settings menu -->
+
             
         </form>
 
@@ -36,35 +37,35 @@
                 <input type="text" name="query" placeholder={{ query }} required minlength="1">
 
                 <button type="submit"><img src={{url_for('static', filename="images/search.png")}}></button>
-            </form>
+            </form> <!-- allows the user to search from the results page -->
 
         </div>
 
         <div class="line">
             <hr>
-        </div>
+        </div> <!-- line for aesthetics-->
 
         <div class="results">
 
-        {% if results %}
+        {% if results %} <!-- runs if there are results to display -->
 
             {% set myResults = results %}
             {% set myTitles = resultsTitles %}
-            {% set myMinorText = resultsMinorText %}
+            {% set myMinorText = resultsMinorText %} <!-- declaring variables -->
 
-            {% for i in range(myResults| length) %}
-                <p style="text-decoration:none;font-size:28px;"><a href="{{ myResults[i] }}">{{resultsTitles[i]}}</a></p>
-                <p style="font-size:20px;color:#45fd88">{{ resultsAuthors[i] }}</p>
-                <p style="font-size:18px;">{{resultsMinorText[i]}}</p><br><br>
+            {% for i in range(myResults| length) %} <!-- loops through each result found, which is typically 10 -->
+                <p style="text-decoration:none;font-size:28px;"><a href="{{ myResults[i] }}">{{resultsTitles[i]}}</a></p> <!-- displays the titles of each article with the appropriate links to the articles -->
+                <p style="font-size:20px;color:#45fd88">{{ resultsAuthors[i] }}</p> <!-- displays the authors of each article -->
+                <p style="font-size:18px;">{{resultsMinorText[i]}}</p><br><br> <!-- displays the subtext of each article -->
                 
             {% endfor %}
 
         {% else %}
-            <p>No Results Found</p>
+            <p>No Results Found</p> <!-- if there arent results to display, displays 'no results found' instead -->
         {% endif %}
         </div>
 
-        <p style="margin-left:auto;margin-right:auto;display:block;width:15%;">You are seeing results {{pageNum + 1}} - {{pageNum + 10}}</p>
+        <p style="margin-left:auto;margin-right:auto;display:block;width:15%;">You are seeing results {{pageNum + 1}} - {{pageNum + 10}}</p> <!-- lets the user know what page they are on -->
 
         <br>
         <br>
@@ -73,7 +74,7 @@
         <br>
         <br>
         <br>
-        <br>
+        <br> <!-- spacing -->
 
         <footer class="footer">
             {% if pageNum >= 10 %}
@@ -81,14 +82,14 @@
 
                 <form action="/last_page" method="GET">
                         <button class="left-arrow" type="submit"><img style="height: 100px; width: 100px;" src={{url_for('static', filename="images/left-arrow.svg")}}></button>
-                </form>
+                </form> <!-- arrow that lets the user move to the  previous page if the page number is greater than 10-->
             </div>
             {% else %}
-                <button class="offset"></button>
+                <button class="offset"></button> <!-- invisible offset to make sure if the button doesnt display then the rest of the page looks the same -->
             {% endif %}
     
             <div class="copyright">
-                <p style="color: #cac7ff;">&copy; Owen Chicklis</p>
+                <p style="color: #cac7ff;">&copy; Owen Chicklis</p> <!-- displays copyright info -->
             </div>
     
     
@@ -96,7 +97,7 @@
     
                 <form action="/next_page" method="GET">
                     <button class="right-arrow" type="submit"><img style="height: 100px; width: 100px;" src={{url_for('static', filename="images/right-arrow.svg")}}></button>
-                </form>
+                </form> <!-- arrow that lets the user move to the next page -->
             </div>
 
         </footer>
