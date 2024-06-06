@@ -6,9 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href={{url_for('static', filename="images/favicon.ico")}}>
 
-
-	    <title>Settings</title>
-        
+	<title>Settings</title>
     </head>
 
     <body>
@@ -17,7 +15,7 @@
             <a href="/"><div class="img__description_layer">
               <p class="img__description">Return Home</p>
             </div></a>
-        </div>
+        </div> <!-- when clicked, sends the user to the home menu -->
 
         <div class="writing">
           <p>
@@ -27,27 +25,5 @@
 
     </body>
 
-    
-  
 </html>
 
-<!--
-
-    // Create a function for getting a variable value
-        function myFunction_get() {
-          // Get the styles (properties and values) for the root
-          var rs = getComputedStyle(r);
-          // Alert the value of the --blue variable
-          alert("The value of --blue is: " + rs.getPropertyValue('--blue'));
-        }
-        <script>
-        // Get the root element
-        var r = document.querySelector(':root');
-        
-        function myFunction_set() {
-          // Set the value of variable --blue to another value (in this case "lightblue")
-          r.style.setProperty('--blue', 'lightblue');
-        }
-        </script> 
-
--->
