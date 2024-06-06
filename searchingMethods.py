@@ -6,8 +6,8 @@ import requests
 
 def searchLink(query, pageNum):
 
-    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30'
-    response = requests.get(url, headers={"Content-Type":"text"})
+    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30' # plug in query and page number to Scholar
+    response = requests.get(url, headers={"Content-Type":"text"}) # holds all the html of the response
     soup = BeautifulSoup(response.content,'lxml')
 
     allResults = []
@@ -15,32 +15,32 @@ def searchLink(query, pageNum):
     for item in soup.select('[data-lid]'):
         try:
 
-            allResults.append(item.select('a')[0]['href'])
+            allResults.append(item.select('a')[0]['href']) # adds all links to a list
 
         except Exception as e:
             print('')
             
-    return allResults
+    return allResults # returns the list
 
 def searchTitles(query, pageNum):
-
-    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30'
-    response = requests.get(url, headers={"Content-Type":"text"})
+ 
+    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30' # plug in query and page number to Scholar
+    response = requests.get(url, headers={"Content-Type":"text"})# holds all the html of the response
     soup = BeautifulSoup(response.content,'lxml')
 
     allResults = []
 
     for item in soup.select('[data-lid]'):
         try:
-            allResults.append(item.select('h3')[0].get_text())
+            allResults.append(item.select('h3')[0].get_text()) # adds all titles to a list
         except Exception as e:
             print('')
-    return allResults
+    return allResults # returns the list
 
 def searchMinorText(query, pageNum):
 
-    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30'
-    response = requests.get(url, headers={"Content-Type":"text"})
+    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30'# plug in query and page number to Scholar
+    response = requests.get(url, headers={"Content-Type":"text"}) # holds all the html of the response
     soup = BeautifulSoup(response.content,'lxml')
 
     allResults = []
@@ -48,15 +48,16 @@ def searchMinorText(query, pageNum):
 
     for item in soup.select('[data-lid]'):
         try:
-            allResults.append(item.select('.gs_rs')[0].get_text())
+            allResults.append(item.select('.gs_rs')[0].get_text()) # adds all subtext to a list
 
         except Exception as e:
             print('')
-    return allResults
+    return allResults # returns the list
+    
 def searchAuthor(query, pageNum):
 
-    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30'
-    response = requests.get(url, headers={"Content-Type":"text"})
+    url = f'https://scholar.google.com/scholar?start={pageNum}&q={query}&hl=en&as_sdt=0,30'# plug in query and page number to Scholar
+    response = requests.get(url, headers={"Content-Type":"text"}) # holds all the html of the response
     soup = BeautifulSoup(response.content,'lxml')
 
     allResults = []
@@ -64,9 +65,9 @@ def searchAuthor(query, pageNum):
 
     for item in soup.select('[data-lid]'):
         try:
-            allResults.append(item.select('.gs_a')[0].get_text())
+            allResults.append(item.select('.gs_a')[0].get_text()) # adds all authors to a list
 
         except Exception as e:
             print('')
-    return allResults
+    return allResults # returns the list
     
